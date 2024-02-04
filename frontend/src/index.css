@@ -64,9 +64,9 @@ header a {
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
-  padding: 6px;
-  border-radius: 50%;
+  background: #0F1011;
+  padding: 8px 12px;
+  border-radius: 4px;
   color: #F2F3F5;
 }
 
@@ -84,11 +84,11 @@ input {
   box-sizing: border-box;
 }
 form button {
-  background: #B5BAC1;
+  background: #131516;
   border: 0;
-  color: #1E1F22;
-  font-weight: 600;
-  padding: 10px;
+  color: #ffefef;
+  font-weight: 500;
+  padding: 10px 12px;
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
