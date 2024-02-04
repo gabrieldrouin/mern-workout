@@ -1,5 +1,9 @@
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
+// date fns
+import { format } from 'date-fns';
+import { frCA } from 'date-fns/locale';
+
 const WorkoutDetails = ({ workout }) => {
     const { dispatch } = useWorkoutsContext()
 
@@ -15,7 +19,6 @@ const WorkoutDetails = ({ workout }) => {
         }
     }
 
-    
 
     return (
         <div className = "workout-details">
@@ -23,8 +26,8 @@ const WorkoutDetails = ({ workout }) => {
             <p><strong>Sets: </strong>{workout.sets}</p>
             <p><strong>Reps: </strong>{workout.reps}</p>
             <p><strong>Repos: </strong>{workout.rest}</p>
-            <p>{workout.createdAt}</p>
-            <span onClick={handleClick}>Retirer</span>
+            <p>{format(new Date(workout.createdAt), "PPPpp", {locale: frCA})}</p>
+            <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
 }
