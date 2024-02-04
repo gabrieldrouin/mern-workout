@@ -5,6 +5,7 @@ Planned features to add:
 <ul>
   <li>Authentification</li>
   <li>Tracking exercice difficulty progression</li>
+  <li>Deployment to Vercel</li></li>
 </ul>
 
 Credit to https://netninja.dev/ for the course content
