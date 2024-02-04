@@ -8,6 +8,7 @@ const WorkoutForm = () => {
     const [reps, setReps] = useState('')
     const [rest, setRest] = useState('')
     const [error, setError] = useState(null)
+    const [emptyFields, setEmptyFields] = useState([])
 
 const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,6 +26,7 @@ const handleSubmit = async (e) => {
 
     if (!response.ok) {
         setError(json.error)
+        setEmptyFields(json.emptyFields)
     }
     if (response.ok) {
         setTitle('')
@@ -46,6 +48,7 @@ const handleSubmit = async (e) => {
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
+            className={emptyFields.includes('title') ? 'error' : ''}
             />
 
             <label>Nombre de sets:</label>
@@ -53,6 +56,7 @@ const handleSubmit = async (e) => {
             type="number"
             onChange={(e) => setSets(e.target.value)}
             value={sets}
+            className={emptyFields.includes('sets') ? 'error' : ''}
             />
 
             <label>Nombre de reps:</label>
@@ -60,6 +64,7 @@ const handleSubmit = async (e) => {
             type="number"
             onChange={(e) => setReps(e.target.value)}
             value={reps}
+            className={emptyFields.includes('reps') ? 'error' : ''}
             />
 
             <label>Temps de repos (secondes):</label>
@@ -67,6 +72,7 @@ const handleSubmit = async (e) => {
             type="number"
             onChange={(e) => setRest(e.target.value)}
             value={rest}
+            className={emptyFields.includes('rest') ? 'error' : ''}
             />
 
             <button>Ajouter</button>
